@@ -4,6 +4,7 @@ import { createStore, applyMiddleware } from "redux";
 import "./index.css";
 import App from "./components/App";
 import rootReducer from "./reducers";
+import thunk from "redux-thunk";
 
 // Curried form - function logger (obj, next, action)
 // logger(obj)(next)(action)
@@ -22,12 +23,26 @@ const logger =
   (next) =>
   (action) => {
     //logger code
-    console.log("ACTION_TYPE = ", action.type);
+    if (typeof action !== "function") {
+      console.log("ACTION_TYPE = ", action.type);
+    }
     next(action);
   };
 
+// const thunk =
+//   ({ dispatch, getState }) =>
+//   (next) =>
+//   (action) => {
+//     //logger code
+//     if (typeof action === "function") {
+//       action(dispatch);
+//       return;
+//     }
+//     next(action);
+//   };
+
 //Create Store
-const store = createStore(rootReducer, applyMiddleware(logger));
+const store = createStore(rootReducer, applyMiddleware(logger, thunk));
 console.log("store", store);
 // console.log('BEFORE STATE', store.getState());
 
