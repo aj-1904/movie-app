@@ -7,15 +7,24 @@ import rootReducer from "./reducers";
 
 // Curried form - function logger (obj, next, action)
 // logger(obj)(next)(action)
-const logger = function ({ dispatch, getState }) {
-  return function (next) {
-    return function (action) {
-      // middleware code
-      console.log("ACTION_TYPE = ", action.type);
-      next(action);
-    };
+// const logger = function ({ dispatch, getState }) {
+//   return function (next) {
+//     return function (action) {
+//       // middleware code
+//       console.log("ACTION_TYPE = ", action.type);
+//       next(action);
+//     };
+//   };
+// };
+
+const logger =
+  ({ dispatch, getState }) =>
+  (next) =>
+  (action) => {
+    //logger code
+    console.log("ACTION_TYPE = ", action.type);
+    next(action);
   };
-};
 
 //Create Store
 const store = createStore(rootReducer, applyMiddleware(logger));
