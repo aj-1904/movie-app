@@ -1,6 +1,7 @@
 # Movie App
 
 This Movie-App is created using React and Redux. It uses OMDB API to show list of movies.
+User can search and add a movie and can Add To Favourites and Unfavourite it.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
