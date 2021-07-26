@@ -15,15 +15,6 @@ const initialMovieState = {
 };
 
 export function movies(state = initialMovieState, action) {
-  console.log("MOVIES REDUCER");
-  // if (action.type === ADD_MOVIES) {
-  //     return {
-  //         ...state,
-  //         list: action.movies
-  //     }
-  // }
-  // return state;
-
   switch (action.type) {
     case ADD_MOVIES:
       return {
@@ -91,13 +82,8 @@ const initialRootState = {
   movies: initialMovieState,
   search: initialSearchState,
 };
-// export default function rootReducer (state = initialRootState, action) {
-//     return {
-//         movies: movies(state.movies, action),
-//         search: search(state.search, action)
-//     }
-// }
 
+// combining reducers
 export default combineReducers({
   movies,
   search,

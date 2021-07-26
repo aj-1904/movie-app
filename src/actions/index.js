@@ -1,12 +1,4 @@
 //Action is JavaScript Object
-// {
-//     type: 'ADD_MOVIES',
-//     movies: []
-// }
-
-// {
-//     type: 'DECREASE_COUNT'
-// }
 
 //action types
 export const ADD_MOVIES = "ADD_MOVIES";

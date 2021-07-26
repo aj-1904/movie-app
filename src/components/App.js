@@ -71,16 +71,6 @@ class App extends React.Component {
   }
 }
 
-// class AppWrapper extends React.Component {
-//   render() {
-//     return (
-//       <StoreContext.Consumer>
-//         {(store) => <App store={store} />}
-//       </StoreContext.Consumer>
-//     );
-//   }
-// }
-
 function mapStateToProps(state) {
   return {
     movies: state.movies,

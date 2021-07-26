@@ -58,19 +58,6 @@ class Navbar extends React.Component {
   }
 }
 
-// Wrapping navbar to access dispatch method coming from store
-// class NavbarWrapper extends React.Component {
-//   render() {
-//     return (
-//       <StoreContext.Consumer>
-//         {(store) => (
-//           <Navbar dispatch={store.dispatch} search={this.props.search} />
-//         )}
-//       </StoreContext.Consumer>
-//     );
-//   }
-// }
-
 // connect Navbar to redux store
 function mapStateToProps({ search }) {
   return {
